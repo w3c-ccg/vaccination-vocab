@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://mattrglobal.github.io/vaccination-certificate-vocab/contexts/v1/"
+  ],
+  "type": [
+    "VerifiableCredential",
+    "VaccinationCertificate"
+  ],
+  "id": "urn:uvci:af5vshde843jf831j128fj",
+  "name": "COVID-19 Vaccination Certificate",
+  "description": "COVID-19 Vaccination Certificate",
+  "issuanceDate": "2019-12-03T12:19:52Z",
+  "expirationDate": "2029-12-03T12:19:52Z",
+  "credentialSubject": {
+    "type": "VaccineRecipient",
+    "givenName": "JOHN",
+    "familyName": "SMITH",
+    "gender": "Male",
+    "birthDate": "1958-07-17",
+    "vaccine": {
+      "disease": "COVID-19",
+      "code": "J07BX03",
+      "productName": "COVID-19 Vaccine Moderna",
+      "marketingAuthorizationHolder": "Moderna Biotech",
+      "batchNumber": "1183738569",
+      "administeringCentre": "MoH",
+      "healthProfessional": "MoH",
+      "countryOfVaccination": "NZ"
+    }
+  },
+  "issuer": "did:key:z6MkiY62766b1LJkExWMsM3QG4WtX7QpY823dxoYzr9qZvJ3",
+  "proof": {
+    "type": "Ed25519Signature2018",
+    "created": "2021-02-03T22:48:22Z",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..OmLxzuhvKupRUa-nGh7i6WaBYSE_ldgC1NEp4oGa3Vec51skAgZk1kv3OJc59IFM-23KE5FaOgdLAB1S_HwXAw",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "did:key:z6MkiY62766b1LJkExWMsM3QG4WtX7QpY823dxoYzr9qZvJ3#z6MkiY62766b1LJkExWMsM3QG4WtX7QpY823dxoYzr9qZvJ3"
+  }
+}

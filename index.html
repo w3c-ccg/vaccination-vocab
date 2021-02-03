@@ -81,11 +81,11 @@ or send them to
         <h3>Example</h3>
 
         <p>
-          The following example is provided as a simple example of when this
-          vocabulary is useful:
+          The following examples are provided as a simple example of how this
+          vocabulary can be used in-conjunction with Verifiable Credentials [[VC-DATA-MODEL]]
         </p>
 
-        <pre class="example">
+        <pre class="example" title="A Vaccine Certificate expressed as a W3C Verifiable Credential featuring an Ed25519 Digital Signature">
           {
             "@context": [
               "https://www.w3.org/2018/credentials/v1",
@@ -95,12 +95,12 @@ or send them to
               "VerifiableCredential",
               "VaccinationCertificate"
             ],
-            "identifier": "83627465",
+            "id": "urn:uvci:af5vshde843jf831j128fj",
             "name": "COVID-19 Vaccination Certificate",
             "description": "COVID-19 Vaccination Certificate",
-            "issuer": "did:key:z6MkiY62766b1LJkExWMsM3QG4WtX7QpY823dxoYzr9qZvJ3",
             "issuanceDate": "2019-12-03T12:19:52Z",
             "expirationDate": "2029-12-03T12:19:52Z",
+            "issuer": "did:key:z6MkiY62766b1LJkExWMsM3QG4WtX7QpY823dxoYzr9qZvJ3",
             "credentialSubject": {
               "type": "VaccineRecipient",
               "givenName": "JOHN",
@@ -120,10 +120,89 @@ or send them to
             },
             "proof": {
               "type": "Ed25519Signature2018",
-              "created": "2021-02-03T21:44:21Z",
-              "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..hbLllFwnxNssiMrxA8GGP1KCH3yzO2LJ5i-iytPvoH0k8vTFBju2XHYCdm5e1Ixs8Csuxqh6do_YAWk9B3EABQ",
+              "created": "2021-02-03T22:48:22Z",
+              "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..OmLxzuhvKupRUa-nGh7i6WaBYSE_ldgC1NEp4oGa3Vec51skAgZk1kv3OJc59IFM-23KE5FaOgdLAB1S_HwXAw",
               "proofPurpose": "assertionMethod",
               "verificationMethod": "did:key:z6MkiY62766b1LJkExWMsM3QG4WtX7QpY823dxoYzr9qZvJ3#z6MkiY62766b1LJkExWMsM3QG4WtX7QpY823dxoYzr9qZvJ3"
+            }
+          }
+        </pre>
+
+        <pre class="example" title="A Vaccine Certificate expressed as a W3C Verifiable Credential featuring a BBS+ Digital Signature that supports selective disclosure">
+          {
+            "@context": [
+              "https://www.w3.org/2018/credentials/v1",
+              "https://mattrglobal.github.io/vaccination-certificate-vocab/contexts/v1/",
+              "https://w3id.org/security/bbs/v1"
+            ],
+            "type": [
+              "VerifiableCredential",
+              "VaccinationCertificate"
+            ],
+            "id": "urn:uvci:af5vshde843jf831j128fj",
+            "name": "COVID-19 Vaccination Certificate",
+            "description": "COVID-19 Vaccination Certificate",
+            "issuanceDate": "2019-12-03T12:19:52Z",
+            "expirationDate": "2029-12-03T12:19:52Z",
+            "issuer": "did:key:zUC724vuGvHpnCGFG1qqpXb81SiBLu3KLSqVzenwEZNPoY35i2Bscb8DLaVwHvRFs6F2NkNNXRcPWvqnPDUd9ukdjLkjZd3u9zzL4wDZDUpkPAatLDGLEYVo8kkAzuAKJQMr7N2",
+            "credentialSubject": {
+              "type": "VaccineRecipient",
+              "givenName": "JOHN",
+              "familyName": "SMITH",
+              "gender": "Male",
+              "birthDate": "1958-07-17",
+              "vaccine": {
+                "disease": "COVID-19",
+                "code": "J07BX03",
+                "productName": "COVID-19 Vaccine Moderna",
+                "marketingAuthorizationHolder": "Moderna Biotech",
+                "batchNumber": "1183738569",
+                "administeringCentre": "MoH",
+                "healthProfessional": "MoH",
+                "countryOfVaccination": "NZ"
+              }
+            },
+            "proof": {
+              "type": "BbsBlsSignature2020",
+              "created": "2021-02-03T22:51:17Z",
+              "proofPurpose": "assertionMethod",
+              "proofValue": "o5L3cRhWf8D01jD3XAr8Q0Kp39U5i1snJ0XxCcSUOARI/E9arl/fbmH4V1GYewbnTJDiB84bvuX9RoGtLYiQPKAf0cn5KEyOOKdhO2bJ+6dA1x4zOBdeJqMNuHuucT5475lHOxa1cQl5wmyFx44Xlg==",
+              "verificationMethod": "did:key:zUC724vuGvHpnCGFG1qqpXb81SiBLu3KLSqVzenwEZNPoY35i2Bscb8DLaVwHvRFs6F2NkNNXRcPWvqnPDUd9ukdjLkjZd3u9zzL4wDZDUpkPAatLDGLEYVo8kkAzuAKJQMr7N2#zUC724vuGvHpnCGFG1qqpXb81SiBLu3KLSqVzenwEZNPoY35i2Bscb8DLaVwHvRFs6F2NkNNXRcPWvqnPDUd9ukdjLkjZd3u9zzL4wDZDUpkPAatLDGLEYVo8kkAzuAKJQMr7N2"
+            }
+          }
+        </pre>
+
+        <pre class="example" title="A Vaccine Certificate expressed as a W3C Verifiable Credential featuring a BBS+ Signature Proof leveraging selective disclosure">
+          {
+            "@context": [
+              "https://www.w3.org/2018/credentials/v1",
+              "https://mattrglobal.github.io/vaccination-certificate-vocab/contexts/v1/",
+              "https://w3id.org/security/bbs/v1"
+            ],
+            "id": "urn:uvci:af5vshde843jf831j128fj",
+            "type": [
+              "VaccinationCertificate",
+              "VerifiableCredential"
+            ],
+            "description": "COVID-19 Vaccination Certificate",
+            "name": "COVID-19 Vaccination Certificate",
+            "credentialSubject": {
+              "id": "urn:bnid:_:c14n0",
+              "type": "VaccineRecipient",
+              "birthDate": "1958-07-17",
+              "familyName": "SMITH",
+              "givenName": "JOHN"
+            },
+            "expirationDate": "2029-12-03T12:19:52Z",
+            "issuanceDate": "2019-12-03T12:19:52Z",
+            "issuer": "did:key:zUC724vuGvHpnCGFG1qqpXb81SiBLu3KLSqVzenwEZNPoY35i2Bscb8DLaVwHvRFs6F2NkNNXRcPWvqnPDUd9ukdjLkjZd3u9zzL4wDZDUpkPAatLDGLEYVo8kkAzuAKJQMr7N2",
+            "proof": {
+              "type": "BbsBlsSignatureProof2020",
+              "created": "2021-02-03T22:51:17Z",
+              "nonce": "vr7zOmOy1/oFz1RPqyk9L2BVJYNDMmiprQ9XQ2gPvBdir7hU/YpswEdKCweZsBenEZg=",
+              "proofPurpose": "assertionMethod",
+              "proofValue": "ABoAAb//sSXVV5mdQYMu9FILCCK31Au9zBY3OKZktjIhvcdVmQ1/BkEDIhmoeA2HXkEL+FcdrNiF7v4vLMsAHaJtLBPHdnkrxWiCGA1J0InhSJPd5r/C8xeMsbk9ECjhMRPozczJsIbanS0JDdrcp1yRKSGUVhYLsygchVIiFDFwrZw+Le0C3u0+eSH7BdttKTOjZMA0AAAAdIM6vJ2b/IHG7vfZkQpFWinG2Tp6xUlIasVSEV+xiNMgduFtNOm0Zl4+jLlYttdwbgAAAAIgojGfnChFOwvaabSnxksX6595cBFlNXGVdB4WIVyBohvnBCVImT16wZYee+a+beh0YABC5jCQht9ePNC/+k7qsYeuCrtlnWKv1J3K0Q0mz7uwdzqiWypLIpVyuutJsV4khDMBithfZm+mtjiHXrAZAAAADGmmjZbJiDG2652GwRCA2aenwbflr3KFRfARCEO9O+FcC7b4qV0ypGAc9qTZcbKaVIREbY3CP59g/+vanBk8VlYgurfnmfSMSUV74Q9YMKlTgPO2SNShxOplV8ejUfvZ5GOAypg8bz+fqxVTovc0NbFv5rVPDbQNw34Lpxd8Yb+PQ+uKsBcugiET7iJWGgK/hwt7erFhgDVnBMO1kmiQ52pk5h9X+eeg1jxEdkAiNJnAVpUk224cJ0CqwMqdQB993TF9bU/UMNMD3UokkbKKEzUjoioi+e2lNiq5TqML//lqKVbcwa03elQWVQpoC+JzIn9DE/vOO6HKxFhlL2MzdWRpQMdkLGV5lbhdOAPuR4m37HPAgO0HxW8HXlc9lzh+/nPMGb5x/NIijaHeV2JGOfWqcyG3bMq+cPduV/jRddhELO+IVxsVRt0gk7iUi6YKZ/7S3QWKYmOTZ6sipKthmO4un96G+/c4bbjIJ2jUy8RqzUJuMQ2JKTYnfZgxW/dHnQ==",
+              "verificationMethod": "did:key:zUC724vuGvHpnCGFG1qqpXb81SiBLu3KLSqVzenwEZNPoY35i2Bscb8DLaVwHvRFs6F2NkNNXRcPWvqnPDUd9ukdjLkjZd3u9zzL4wDZDUpkPAatLDGLEYVo8kkAzuAKJQMr7N2#zUC724vuGvHpnCGFG1qqpXb81SiBLu3KLSqVzenwEZNPoY35i2Bscb8DLaVwHvRFs6F2NkNNXRcPWvqnPDUd9ukdjLkjZd3u9zzL4wDZDUpkPAatLDGLEYVo8kkAzuAKJQMr7N2"
             }
           }
         </pre>
