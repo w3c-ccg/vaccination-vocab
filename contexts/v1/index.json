@@ -1,44 +1,14 @@
 {
-    "@version": 1.1,
-    "@protected": true,
+    "@context": {
+        "@version": 1.1,
+        "@protected": true,
 
-    "name": "http://schema.org/name",
-    "description": "http://schema.org/description",
-    "identifier": "http://schema.org/identifier",
+        "name": "http://schema.org/name",
+        "description": "http://schema.org/description",
+        "identifier": "http://schema.org/identifier",
 
-    "VaccinationCertificate": {
-        "@id": "https://example.org/vaccination#VaccinationCertificate",
-        "@context": {
-            "@version": 1.1,
-            "@protected": true,
-
-            "id": "@id",
-            "type": "@type",
-
-            "description": "http://schema.org/description",
-            "name": "http://schema.org/name",
-            "identifier": "http://schema.org/identifier",
-
-            "dateOfVaccination": {"@id": "http://example.org/vaccination#dateOfVaccination", "@type": "http://www.w3.org/2001/XMLSchema#dateTime"}
-        }
-    },
-
-    "VaccineRecipient": {
-        "@id": "https://w3id.org/vaccination#VaccineRecipient",
-        "@context": {
-          "@version": 1.1,
-          "@protected": true,
-
-          "id": "@id",
-          "type": "@type",
-
-          "birthDate": {"@id": "http://schema.org/birthDate", "@type": "http://www.w3.org/2001/XMLSchema#dateTime"},
-          "familyName": "http://schema.org/familyName",
-          "gender": "http://schema.org/gender",
-          "givenName": "http://schema.org/givenName",
-
-          "vaccine": {
-            "@id": "https://example.org/vaccination#Vaccine",
+        "VaccinationCertificate": {
+            "@id": "https://mattrglobal.github.io/vaccination-certificate-vocab#VaccinationCertificate",
             "@context": {
                 "@version": 1.1,
                 "@protected": true,
@@ -46,16 +16,48 @@
                 "id": "@id",
                 "type": "@type",
 
-                "disease": "https://example.org/vaccination#disease",
-                "code": "https://example.org/vaccination#code",
-                "productName": "https://example.org/vaccination#productName",
-                "marketingAuthorizationHolder": "https://example.org/vaccination#marketingAuthorizationHolder",
-                "batchNumber": "https://example.org/vaccination#batchNumber",
-                "administeringCentre": "https://example.org/vaccination#administeringCentre",
-                "healthProfessional": "https://example.org/vaccination#healthProfessional",
-                "countryOfVaccination": "https://example.org/vaccination#countryOfVaccination"
+                "description": "http://schema.org/description",
+                "name": "http://schema.org/name",
+                "identifier": "http://schema.org/identifier",
+
+                "dateOfVaccination": {"@id": "https://mattrglobal.github.io/vaccination-certificate-vocab#dateOfVaccination", "@type": "http://www.w3.org/2001/XMLSchema#dateTime"}
             }
-          }
+        },
+
+        "VaccineRecipient": {
+            "@id": "https://mattrglobal.github.io/vaccination-certificate-vocab#VaccineRecipient",
+            "@context": {
+                "@version": 1.1,
+                "@protected": true,
+
+                "id": "@id",
+                "type": "@type",
+
+                "birthDate": {"@id": "http://schema.org/birthDate", "@type": "http://www.w3.org/2001/XMLSchema#dateTime"},
+                "familyName": "http://schema.org/familyName",
+                "gender": "http://schema.org/gender",
+                "givenName": "http://schema.org/givenName",
+
+                "vaccine": {
+                    "@id": "https://mattrglobal.github.io/vaccination-certificate-vocab/#Vaccine",
+                    "@context": {
+                        "@version": 1.1,
+                        "@protected": true,
+
+                        "id": "@id",
+                        "type": "@type",
+
+                        "disease": "https://mattrglobal.github.io/vaccination-certificate-vocab#disease",
+                        "code": "https://mattrglobal.github.io/vaccination-certificate-vocab#code",
+                        "productName": "https://mattrglobal.github.io/vaccination-certificate-vocab#productName",
+                        "marketingAuthorizationHolder": "https://mattrglobal.github.io/vaccination-certificate-vocab#marketingAuthorizationHolder",
+                        "batchNumber": "https://mattrglobal.github.io/vaccination-certificate-vocab#batchNumber",
+                        "administeringCentre": "https://mattrglobal.github.io/vaccination-certificate-vocab#administeringCentre",
+                        "healthProfessional": "https://mattrglobal.github.io/vaccination-certificate-vocab#healthProfessional",
+                        "countryOfVaccination": "https://mattrglobal.github.io/vaccination-certificate-vocab#countryOfVaccination"
+                    }
+                }
+            }
         }
     }
 }
