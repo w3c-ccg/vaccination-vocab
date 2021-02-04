@@ -1,0 +1,20 @@
+name: CI
+
+on: [push]
+
+jobs:
+  lint:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    - name: Lint JSON-LD Context Definition
+      run: npx jsonld-lint-cli context/v1/index.json
+    - name: Lint JSON-LD Examples
+      run: npx jsonld-lint-cli examples
