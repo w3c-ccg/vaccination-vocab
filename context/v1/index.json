@@ -3,12 +3,16 @@
         "@version": 1.1,
         "@protected": true,
 
-        "name": "http://schema.org/name",
+        "id": "@id",
+        "type": "@type",
+
         "description": "http://schema.org/description",
         "identifier": "http://schema.org/identifier",
+        "name": "http://schema.org/name",
 
         "VaccinationCertificate": {
-            "@id": "https://mattrglobal.github.io/vaccination-certificate-vocab#VaccinationCertificate",
+            "@id": "https://w3id.org/vaccination#VaccinationCertificate",
+
             "@context": {
                 "@version": 1.1,
                 "@protected": true,
@@ -17,15 +21,14 @@
                 "type": "@type",
 
                 "description": "http://schema.org/description",
-                "name": "http://schema.org/name",
                 "identifier": "http://schema.org/identifier",
-
-                "dateOfVaccination": {"@id": "https://mattrglobal.github.io/vaccination-certificate-vocab#dateOfVaccination", "@type": "http://www.w3.org/2001/XMLSchema#dateTime"}
+                "name": "http://schema.org/name"
             }
         },
 
         "VaccineRecipient": {
-            "@id": "https://mattrglobal.github.io/vaccination-certificate-vocab#VaccineRecipient",
+            "@id": "https://w3id.org/vaccination#VaccineRecipient",
+
             "@context": {
                 "@version": 1.1,
                 "@protected": true,
@@ -33,30 +36,65 @@
                 "id": "@id",
                 "type": "@type",
 
-                "birthDate": {"@id": "http://schema.org/birthDate", "@type": "http://www.w3.org/2001/XMLSchema#dateTime"},
+                "birthDate": {
+                    "@id": "http://schema.org/birthDate", 
+                    "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                },
                 "familyName": "http://schema.org/familyName",
                 "gender": "http://schema.org/gender",
                 "givenName": "http://schema.org/givenName",
-
                 "vaccine": {
-                    "@id": "https://mattrglobal.github.io/vaccination-certificate-vocab/#Vaccine",
-                    "@context": {
-                        "@version": 1.1,
-                        "@protected": true,
-
-                        "id": "@id",
-                        "type": "@type",
-
-                        "disease": "https://mattrglobal.github.io/vaccination-certificate-vocab#disease",
-                        "code": "https://mattrglobal.github.io/vaccination-certificate-vocab#code",
-                        "productName": "https://mattrglobal.github.io/vaccination-certificate-vocab#productName",
-                        "marketingAuthorizationHolder": "https://mattrglobal.github.io/vaccination-certificate-vocab#marketingAuthorizationHolder",
-                        "batchNumber": "https://mattrglobal.github.io/vaccination-certificate-vocab#batchNumber",
-                        "administeringCentre": "https://mattrglobal.github.io/vaccination-certificate-vocab#administeringCentre",
-                        "healthProfessional": "https://mattrglobal.github.io/vaccination-certificate-vocab#healthProfessional",
-                        "countryOfVaccination": "https://mattrglobal.github.io/vaccination-certificate-vocab#countryOfVaccination"
-                    }
+                    "@id": "https://w3id.org/vaccination#VaccineRecipientVaccine",
+                    "@type": "https://w3id.org/vaccination#Vaccine"
                 }
+            }
+        },
+
+        "Vaccine": {
+            "@id": "https://w3id.org/vaccination#Vaccine",
+
+            "@context": {
+                "@version": 1.1,
+                "@protected": true,
+
+                "id": "@id",
+                "type": "@type",
+
+                "atcCode": "https://w3id.org/vaccination#atc-code",
+                "disease": "https://w3id.org/vaccination#disease",
+                "event": {
+                    "@id": "https://w3id.org/vaccination#VaccineRecipientVaccineEvent",
+                    "@type": "https://w3id.org/vaccination#VaccineEvent"
+                },
+                "marketingAuthorizationHolder": "https://w3id.org/vaccination#marketingAuthorizationHolder",
+                "medicinalProductName": "https://w3id.org/vaccination#medicinalProductName"
+
+            }
+        },
+
+        "VaccinationEvent": {
+            "@id": "https://w3id.org/vaccination#VaccinationEvent",
+
+            "@context": {
+                "@version": 1.1,
+                "@protected": true,
+
+                "id": "@id",
+                "type": "@type",
+
+                "administeringCentre": "https://w3id.org/vaccination#administeringCentre",
+                "batchNumber": "https://w3id.org/vaccination#batchNumber",
+                "countryOfVaccination": "https://w3id.org/vaccination#countryOfVaccination",
+                "dateOfVaccination": {
+                    "@id": "https://w3id.org/vaccination#dateOfVaccination", 
+                    "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                },
+                "healthProfessional": "https://w3id.org/vaccination#healthProfessional",
+                "nextVaccinationDate": {
+                    "@id": "https://w3id.org/vaccination#nextVaccinationDate", 
+                    "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                },
+                "order": "https://w3id.org/vaccination#order"
             }
         }
     }

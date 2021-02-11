@@ -18,13 +18,13 @@
       var respecConfig = {
           specStatus: 'unofficial',
           logos: [{
-              id: 'place-holder',
+            id: 'place-holder',
           }],
           editors: [
           {
-                  name: "Tobias Looker",
-                  company: "Mattr",
-                  companyUrl: "https://mattr.global/",
+            name: "Tobias Looker",
+            company: "Mattr",
+            companyUrl: "https://mattr.global/",
           }],
           processVersion: 2017,
           edDraftURI: "https://mattrglobal.github.io/vaccination-certificate-vocab/",
@@ -39,7 +39,7 @@
   <body>
     <section id="abstract">
       <p>
-        This specification describes <b>an experimental Linked Data vocabulary</b> for asserting
+        This specification describes <b>an experimental vocabulary</b> for asserting
         Verifiable Credentials related to vaccination certificates for medical purposes
       </p>
     </section>
@@ -59,7 +59,7 @@ or send them to
     <section class="informative">
       <h2>Introduction</h2>
       <p>
-        This specification describes <b>an experimental Linked Data vocabulary</b> for asserting
+        This specification describes <b>an experimental vocabulary</b> for asserting
         Verifiable Credentials related to vaccination certificates for medical purposes
       </p>
 
@@ -89,7 +89,7 @@ or send them to
           {
             "@context": [
               "https://www.w3.org/2018/credentials/v1",
-              "https://mattrglobal.github.io/vaccination-certificate-vocab/context/v1/"
+              "https://w3id.org/vaccination/v1"
             ],
             "type": [
               "VerifiableCredential",
@@ -132,7 +132,7 @@ or send them to
           {
             "@context": [
               "https://www.w3.org/2018/credentials/v1",
-              "https://mattrglobal.github.io/vaccination-certificate-vocab/context/v1/",
+              "https://w3id.org/vaccination/v1",
               "https://w3id.org/security/bbs/v1"
             ],
             "type": [
@@ -176,7 +176,7 @@ or send them to
           {
             "@context": [
               "https://www.w3.org/2018/credentials/v1",
-              "https://mattrglobal.github.io/vaccination-certificate-vocab/context/v1/",
+              "https://w3id.org/vaccination/v1",
               "https://w3id.org/security/bbs/v1"
             ],
             "id": "urn:uvci:af5vshde843jf831j128fj",
@@ -218,14 +218,45 @@ or send them to
       ></div>
     </section>
 
+    <section class="informative">
+      <h2>Concepts</h2>
+
+      <p>
+        A vaccination certificate contains many different pieces of information
+        relating to the vaccination of an individual. These pieces can be
+        organized into the following categories
+      </p>
+
+      <ul>
+        <li><b>Vaccination Certificate</b>: Information pertaining to the vaccination certificate itself (e.g when the certificate expires)</li>
+        <li><b>Vaccine Recipient</b>: Information describing the recipient of the vaccine (e.g first name)</li>
+        <li><b>Vaccine</b>: Information describing the vaccine that was administered to its recipient (e.g name of vaccine)</li>
+        <li><b>Vaccination Event</b>: Information describing the vaccination event (e.g date the vaccination occurred or how it was administered)</li>
+      </ul>
+
+      <figure id="information-model">
+        <img style="margin: auto; display: block;"
+       src="assets/information-model.png" alt="diagram showing
+       the information model for a vaccination certificate">
+        <figcaption style="text-align: center;">
+          The information model for a vaccination certificate
+        </figcaption>
+      </figure>
+
+      <img>
+
+    </section>
+
     <section class="normative">
       <h2>The Vaccination Certificate Vocabulary</h2>
+      
       <p>
         This vocabulary assumes all terms specified in the base Verifiable
         Credentials [[VC-DATA-MODEL]] context. In addition, the following
         classes are available for specifying information related to proof 
         of vaccination for medical purposes
       </p>
+
       <table class="simple">
         <thead>
           <tr>
@@ -242,14 +273,26 @@ or send them to
             <td>VaccineRecipient</td>
             <td>Specifies that the subject of the credential is the recipient of a specified vaccine.</td>
           </tr>
+          <tr>
+            <td>Vaccine</td>
+            <td>Specifies the details of medical product serving as a vaccine.</td>
+          </tr>
+          <tr>
+            <td>VaccinationEvent</td>
+            <td>Specifies the details of the vaccination event including the administration details.</td>
+          </tr>
         </tbody>
       </table>
 
-      <p>
-        This document also specifies the following terms for expressing
-        proof of vaccination for medical purposes
-      </p>
 
+      <section class="normative">
+      <h3>Vaccine Recipient</h3>
+      
+      <p>
+        This document specifies the following terms for expressing
+        the details about the "Vaccine Recipient"
+      </p>
+      
       <table class="simple">
         <thead>
           <tr>
@@ -290,6 +333,160 @@ or send them to
                 The gender of the  vaccine recipient.
             </td>
           </tr>
+        </tbody>
+      </table>
+
+      <section class="normative">
+        <h4>
+            Birth Date
+        </h4>
+
+        <p>
+            The date on which the vaccine recipient was born.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>
+                  birthDate
+            </td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>
+                http://schema.org/birthDate
+            </td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>
+                Datetime
+            </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="normative">
+        <h4>
+            Family Name
+        </h4>
+
+        <p>
+            The date on which the vaccine recipient was born.
+        </p>
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>
+                  familyName
+            </td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>
+                http://schema.org/familyName
+            </td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>
+                String
+            </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="normative">
+        <h4>
+            Given Name
+        </h4>
+
+        <p>
+            The date on which the vaccine recipient was born.
+        </p>
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>
+                  givenName
+            </td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>
+                http://schema.org/givenName
+            </td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>
+                String
+            </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="normative">
+        <h4>
+            Gender
+        </h4>
+
+        <p>
+            The gender of the vaccine recipient.
+        </p>
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>
+                  gender
+            </td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>
+                http://schema.org/gender
+            </td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>
+                String
+            </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+
+    <section class="normative">
+      <h3>Vaccine</h3>
+      
+      <p>
+        This document specifies the following terms for expressing
+        the details about the "Vaccine"
+      </p>
+      
+      <table class="simple">
+        <thead>
+          <tr>
+            <th>Term</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              atcCode
+            </td>
+            <td>
+              Anatomical Therapeutic Chemical Code.
+            </td>
+          </tr>
           <tr>
             <td>
                 disease
@@ -308,7 +505,7 @@ or send them to
           </tr>
           <tr>
             <td>
-                vaccineMedicinalProduct
+                medicinalProductName
             </td>
             <td>
                 Medicinal product name.
@@ -322,6 +519,146 @@ or send them to
               Marketing Authorization Holder.
             </td>
           </tr>
+        </tbody>
+      </table>
+
+      <section class="normative">
+        <h4>
+            ATC Code
+        </h4>
+
+        <p>
+            Anatomical Therapeutic Chemical Code, see [[WHO-ATC-CODE]]
+        </p>
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>
+                  atcCode
+            </td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>
+                https://w3id.org/vaccination#atcCode
+            </td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>
+                String
+            </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="normative">
+        <h4>
+            Disease
+        </h4>
+
+        <p>
+            Disease or agent that the vaccination administered to the recipient provides protection against.
+        </p>
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>
+                  disease
+            </td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>
+                https://w3id.org/vaccination#disease
+            </td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>
+                String
+            </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="normative">
+        <h4>
+            Medicinal Product Name
+        </h4>
+
+        <p>
+            Medicinal product name of the vaccine.
+        </p>
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>
+                medicinalProductName
+            </td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>
+                https://w3id.org/vaccination#medicinalProductName
+            </td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>
+                String
+            </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="normative">
+        <h4>
+            Marketing Authorization Holder
+        </h4>
+
+        <p>
+          Marketing authorization holder of the vaccine.
+        </p>
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>
+                marketingAuthorizationHolder
+            </td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>
+                https://w3id.org/vaccination#marketingAuthorizationHolder
+            </td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>
+                String
+            </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+
+    <section class="normative">
+      <h3>Vaccination Event</h3>
+
+      <table class="simple">
+        <thead>
+          <tr>
+            <th>Term</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
           <tr>
             <td>
               order
@@ -382,227 +719,9 @@ or send them to
       </table>
 
       <section class="normative">
-        <h3>
-            Birth Date
-        </h3>
-
-        <p>
-            The date on which the vaccine recipient was born.
-        </p>
-
-        <table class="simple">
-          <tbody>
-            <tr>
-              <td>Term</td>
-              <td>
-                  birthDate
-            </td>
-            </tr>
-            <tr>
-              <td>URL</td>
-              <td>
-                http://schema.org/birthDate
-            </td>
-            </tr>
-            <tr>
-              <td>Expected Value</td>
-              <td>
-                Datetime
-            </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <section class="normative">
-        <h3>
-            Family Name
-        </h3>
-
-        <p>
-            The date on which the vaccine recipient was born.
-        </p>
-        <table class="simple">
-          <tbody>
-            <tr>
-              <td>Term</td>
-              <td>
-                  familyName
-            </td>
-            </tr>
-            <tr>
-              <td>URL</td>
-              <td>
-                http://schema.org/familyName
-            </td>
-            </tr>
-            <tr>
-              <td>Expected Value</td>
-              <td>
-                String
-            </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <section class="normative">
-        <h3>
-            Given Name
-        </h3>
-
-        <p>
-            The date on which the vaccine recipient was born.
-        </p>
-        <table class="simple">
-          <tbody>
-            <tr>
-              <td>Term</td>
-              <td>
-                  givenName
-            </td>
-            </tr>
-            <tr>
-              <td>URL</td>
-              <td>
-                http://schema.org/givenName
-            </td>
-            </tr>
-            <tr>
-              <td>Expected Value</td>
-              <td>
-                String
-            </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <section class="normative">
-        <h3>
-            Gender
-        </h3>
-
-        <p>
-            The gender of the vaccine recipient.
-        </p>
-        <table class="simple">
-          <tbody>
-            <tr>
-              <td>Term</td>
-              <td>
-                  gender
-            </td>
-            </tr>
-            <tr>
-              <td>URL</td>
-              <td>
-                http://schema.org/gender
-            </td>
-            </tr>
-            <tr>
-              <td>Expected Value</td>
-              <td>
-                String
-            </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <section class="normative">
-        <h3>
-            Disease
-        </h3>
-
-        <p>
-            Disease or agent that the vaccination administered to the recipient provides protection against.
-        </p>
-        <table class="simple">
-          <tbody>
-            <tr>
-              <td>Term</td>
-              <td>
-                  disease
-            </td>
-            </tr>
-            <tr>
-              <td>URL</td>
-              <td>
-                https://mattrglobal.github.io/vaccination-certificate-vocab#disease
-            </td>
-            </tr>
-            <tr>
-              <td>Expected Value</td>
-              <td>
-                String
-            </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <section class="normative">
-        <h3>
-            Vaccine Medicinal Product
-        </h3>
-
-        <p>
-            Medicinal product name of the vaccine.
-        </p>
-        <table class="simple">
-          <tbody>
-            <tr>
-              <td>Term</td>
-              <td>
-                vaccineMedicinalProduct
-            </td>
-            </tr>
-            <tr>
-              <td>URL</td>
-              <td>
-                https://mattrglobal.github.io/vaccination-certificate-vocab#vaccineMedicinalProduct
-            </td>
-            </tr>
-            <tr>
-              <td>Expected Value</td>
-              <td>
-                String
-            </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <section class="normative">
-        <h3>
-            Marketing Authorization Holder
-        </h3>
-
-        <p>
-          Marketing authorization holder of the vaccine.
-        </p>
-        <table class="simple">
-          <tbody>
-            <tr>
-              <td>Term</td>
-              <td>
-                marketingAuthorizationHolder
-            </td>
-            </tr>
-            <tr>
-              <td>URL</td>
-              <td>
-                https://mattrglobal.github.io/vaccination-certificate-vocab#marketingAuthorizationHolder
-            </td>
-            </tr>
-            <tr>
-              <td>Expected Value</td>
-              <td>
-                String
-            </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <section class="normative">
-        <h3>
+        <h4>
             Order
-        </h3>
+        </h4>
 
         <p>
             Order in the vaccination course.
@@ -618,7 +737,7 @@ or send them to
             <tr>
               <td>URL</td>
               <td>
-                https://mattrglobal.github.io/vaccination-certificate-vocab#order
+                https://w3id.org/vaccination#order
             </td>
             </tr>
             <tr>
@@ -631,9 +750,9 @@ or send them to
         </table>
       </section>
       <section class="normative">
-        <h3>
+        <h4>
             Batch Number
-        </h3>
+        </h4>
 
         <p>
             A distinctive combination of numbers and/or letters which specifically identifies a batch.
@@ -649,7 +768,7 @@ or send them to
             <tr>
               <td>URL</td>
               <td>
-                https://mattrglobal.github.io/vaccination-certificate-vocab#batchNumber
+                https://w3id.org/vaccination#batchNumber
             </td>
             </tr>
             <tr>
@@ -662,9 +781,9 @@ or send them to
         </table>
       </section>
       <section class="normative">
-        <h3>
+        <h4>
             Date Of Vaccination
-        </h3>
+        </h4>
 
         <p>
             Date in which the vaccination event occurred.
@@ -680,7 +799,7 @@ or send them to
             <tr>
               <td>URL</td>
               <td>
-                https://mattrglobal.github.io/vaccination-certificate-vocab#dateOfVaccination
+                https://w3id.org/vaccination#dateOfVaccination
             </td>
             </tr>
             <tr>
@@ -693,9 +812,9 @@ or send them to
         </table>
       </section>
       <section class="normative">
-        <h3>
+        <h4>
             Administering Centre
-        </h3>
+        </h4>
 
         <p>
             Name/code of administering centre or a health authority responsible for the vaccination event.
@@ -711,7 +830,7 @@ or send them to
             <tr>
               <td>URL</td>
               <td>
-                https://mattrglobal.github.io/vaccination-certificate-vocab#administeringCentre
+                https://w3id.org/vaccination#administeringCentre
             </td>
             </tr>
             <tr>
@@ -724,9 +843,9 @@ or send them to
         </table>
       </section>
       <section class="normative">
-        <h3>
+        <h4>
             Health Professional
-        </h3>
+        </h4>
 
         <p>
             Name or health professional code responsible for administering the vaccine or prophylaxis.
@@ -742,7 +861,7 @@ or send them to
             <tr>
               <td>URL</td>
               <td>
-                https://mattrglobal.github.io/vaccination-certificate-vocab#healthProfessional
+                https://w3id.org/vaccination#healthProfessional
             </td>
             </tr>
             <tr>
@@ -755,9 +874,9 @@ or send them to
         </table>
       </section>
       <section class="normative">
-        <h3>
+        <h4>
             Country Of Vaccination
-        </h3>
+        </h4>
 
         <p>
             The country in which the vaccine recipient was vaccinated, MUST be a valid country code as per ISO 3166.
@@ -773,7 +892,7 @@ or send them to
             <tr>
               <td>URL</td>
               <td>
-                https://mattrglobal.github.io/vaccination-certificate-vocab#countryOfVaccination
+                https://w3id.org/vaccination#countryOfVaccination
             </td>
             </tr>
             <tr>
@@ -786,9 +905,9 @@ or send them to
         </table>
       </section>
       <section class="normative">
-        <h3>
+        <h4>
             Next Vaccination Date
-        </h3>
+        </h4>
 
         <p>
             Date on which the next vaccination should be administered to the vaccine recipient.
@@ -804,7 +923,7 @@ or send them to
             <tr>
               <td>URL</td>
               <td>
-                https://mattrglobal.github.io/vaccination-certificate-vocab#nextVaccinationDate
+                https://w3id.org/vaccination#nextVaccinationDate
             </td>
             </tr>
             <tr>
@@ -816,6 +935,7 @@ or send them to
           </tbody>
         </table>
       </section>
+    </section>
 
     <section class="informative">
       <h2>Privacy Considerations</h2>

@@ -1,7 +1,7 @@
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
-    "https://mattrglobal.github.io/vaccination-certificate-vocab/context/v1/",
+    "https://w3id.org/vaccination/v1",
     "https://w3id.org/security/bbs/v1"
   ],
   "type": [
@@ -20,14 +20,18 @@
     "gender": "Male",
     "birthDate": "1958-07-17",
     "vaccine": {
+      "type": "Vaccine",
       "disease": "COVID-19",
-      "code": "J07BX03",
-      "productName": "COVID-19 Vaccine Moderna",
+      "atcCode": "J07BX03",
+      "medicinalProductName": "COVID-19 Vaccine Moderna",
       "marketingAuthorizationHolder": "Moderna Biotech",
-      "batchNumber": "1183738569",
-      "administeringCentre": "MoH",
-      "healthProfessional": "MoH",
-      "countryOfVaccination": "NZ"
+      "event": {
+        "type": "VaccinationEvent",
+        "batchNumber": "1183738569",
+        "administeringCentre": "MoH",
+        "healthProfessional": "MoH",
+        "countryOfVaccination": "NZ"
+      }
     }
   },
   "issuer": "did:key:zUC724vuGvHpnCGFG1qqpXb81SiBLu3KLSqVzenwEZNPoY35i2Bscb8DLaVwHvRFs6F2NkNNXRcPWvqnPDUd9ukdjLkjZd3u9zzL4wDZDUpkPAatLDGLEYVo8kkAzuAKJQMr7N2",
