@@ -26,52 +26,6 @@
             }
         },
 
-        "VaccineRecipient": {
-            "@id": "https://w3id.org/vaccination#VaccineRecipient",
-
-            "@context": {
-                "@version": 1.1,
-                "@protected": true,
-
-                "id": "@id",
-                "type": "@type",
-
-                "birthDate": {
-                    "@id": "http://schema.org/birthDate", 
-                    "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-                },
-                "familyName": "http://schema.org/familyName",
-                "gender": "http://schema.org/gender",
-                "givenName": "http://schema.org/givenName",
-                "vaccine": {
-                    "@id": "https://w3id.org/vaccination#VaccineRecipientVaccine",
-                    "@type": "https://w3id.org/vaccination#Vaccine"
-                }
-            }
-        },
-
-        "Vaccine": {
-            "@id": "https://w3id.org/vaccination#Vaccine",
-
-            "@context": {
-                "@version": 1.1,
-                "@protected": true,
-
-                "id": "@id",
-                "type": "@type",
-
-                "atcCode": "https://w3id.org/vaccination#atc-code",
-                "disease": "https://w3id.org/vaccination#disease",
-                "event": {
-                    "@id": "https://w3id.org/vaccination#VaccineRecipientVaccineEvent",
-                    "@type": "https://w3id.org/vaccination#VaccineEvent"
-                },
-                "marketingAuthorizationHolder": "https://w3id.org/vaccination#marketingAuthorizationHolder",
-                "medicinalProductName": "https://w3id.org/vaccination#medicinalProductName"
-
-            }
-        },
-
         "VaccinationEvent": {
             "@id": "https://w3id.org/vaccination#VaccinationEvent",
 
@@ -94,7 +48,56 @@
                     "@id": "https://w3id.org/vaccination#nextVaccinationDate", 
                     "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
                 },
-                "order": "https://w3id.org/vaccination#order"
+                "order": "https://w3id.org/vaccination#order",
+                "recipient": {
+                    "@id": "https://w3id.org/vaccination#recipient",
+                    "@type": "https://w3id.org/vaccination#VaccineRecipient"
+                },
+                "vaccine": {
+                    "@id": "https://w3id.org/vaccination#VaccineEventVaccine",
+                    "@type": "https://w3id.org/vaccination#Vaccine"
+                }
+            }
+        },
+
+        "VaccineRecipient": {
+            "@id": "https://w3id.org/vaccination#VaccineRecipient",
+
+            "@context": {
+                "@version": 1.1,
+                "@protected": true,
+
+                "id": "@id",
+                "type": "@type",
+
+                "birthDate": {
+                    "@id": "http://schema.org/birthDate", 
+                    "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                },
+                "familyName": "http://schema.org/familyName",
+                "gender": "http://schema.org/gender",
+                "givenName": "http://schema.org/givenName"
+            }
+        },
+
+        "Vaccine": {
+            "@id": "https://w3id.org/vaccination#Vaccine",
+
+            "@context": {
+                "@version": 1.1,
+                "@protected": true,
+
+                "id": "@id",
+                "type": "@type",
+
+                "atcCode": "https://w3id.org/vaccination#atc-code",
+                "disease": "https://w3id.org/vaccination#disease",
+                "event": {
+                    "@id": "https://w3id.org/vaccination#VaccineRecipientVaccineEvent",
+                    "@type": "https://w3id.org/vaccination#VaccineEvent"
+                },
+                "marketingAuthorizationHolder": "https://w3id.org/vaccination#marketingAuthorizationHolder",
+                "medicinalProductName": "https://w3id.org/vaccination#medicinalProductName"
             }
         }
     }
