@@ -14,30 +14,30 @@
   "expirationDate": "2029-12-03T12:19:52Z",
   "issuer": "did:key:z6MkiY62766b1LJkExWMsM3QG4WtX7QpY823dxoYzr9qZvJ3",
   "credentialSubject": {
-    "type": "VaccineRecipient",
-    "givenName": "JOHN",
-    "familyName": "SMITH",
-    "gender": "Male",
-    "birthDate": "1958-07-17",
+    "type": "VaccinationEvent",
+    "batchNumber": "1183738569",
+    "administeringCentre": "MoH",
+    "healthProfessional": "MoH",
+    "countryOfVaccination": "NZ",
+    "recipient": {
+      "type": "VaccineRecipient",
+      "givenName": "JOHN",
+      "familyName": "SMITH",
+      "gender": "Male",
+      "birthDate": "1958-07-17"
+    },
     "vaccine": {
       "type": "Vaccine",
       "disease": "COVID-19",
       "atcCode": "J07BX03",
       "medicinalProductName": "COVID-19 Vaccine Moderna",
-      "marketingAuthorizationHolder": "Moderna Biotech",
-      "event": {
-        "type": "VaccinationEvent",
-        "batchNumber": "1183738569",
-        "administeringCentre": "MoH",
-        "healthProfessional": "MoH",
-        "countryOfVaccination": "NZ"
-      }
+      "marketingAuthorizationHolder": "Moderna Biotech"
     }
   },
   "proof": {
     "type": "Ed25519Signature2018",
-    "created": "2021-02-15T02:23:15Z",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..OqR7PyeCgIsGxL34GT3jjKlawTZVnkOlscB7x_2kLS0uzsCt3oTgBQqLU_lSx2FUHChj1gCCyegNlVzKNiK1Dw",
+    "created": "2021-02-18T23:00:15Z",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..vD_vXJCWdeGpN-qKHDIlzgGC0auRPcwp3O1sOI-gN8z3UD4pI0HO_77ob5KHhhU1ugLrrwrMsKv71mqHBn-dBg",
     "proofPurpose": "assertionMethod",
     "verificationMethod": "did:key:z6MkiY62766b1LJkExWMsM3QG4WtX7QpY823dxoYzr9qZvJ3#z6MkiY62766b1LJkExWMsM3QG4WtX7QpY823dxoYzr9qZvJ3"
   }

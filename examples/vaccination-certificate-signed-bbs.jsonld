@@ -15,31 +15,31 @@
   "expirationDate": "2029-12-03T12:19:52Z",
   "issuer": "did:key:zUC724vuGvHpnCGFG1qqpXb81SiBLu3KLSqVzenwEZNPoY35i2Bscb8DLaVwHvRFs6F2NkNNXRcPWvqnPDUd9ukdjLkjZd3u9zzL4wDZDUpkPAatLDGLEYVo8kkAzuAKJQMr7N2",
   "credentialSubject": {
-    "type": "VaccineRecipient",
-    "givenName": "JOHN",
-    "familyName": "SMITH",
-    "gender": "Male",
-    "birthDate": "1958-07-17",
+    "type": "VaccinationEvent",
+    "batchNumber": "1183738569",
+    "administeringCentre": "MoH",
+    "healthProfessional": "MoH",
+    "countryOfVaccination": "NZ",
+    "recipient": {
+      "type": "VaccineRecipient",
+      "givenName": "JOHN",
+      "familyName": "SMITH",
+      "gender": "Male",
+      "birthDate": "1958-07-17"
+    },
     "vaccine": {
       "type": "Vaccine",
       "disease": "COVID-19",
       "atcCode": "J07BX03",
       "medicinalProductName": "COVID-19 Vaccine Moderna",
-      "marketingAuthorizationHolder": "Moderna Biotech",
-      "event": {
-        "type": "VaccinationEvent",
-        "batchNumber": "1183738569",
-        "administeringCentre": "MoH",
-        "healthProfessional": "MoH",
-        "countryOfVaccination": "NZ"
-      }
+      "marketingAuthorizationHolder": "Moderna Biotech"
     }
   },
   "proof": {
     "type": "BbsBlsSignature2020",
-    "created": "2021-02-15T02:21:19Z",
+    "created": "2021-02-18T23:01:59Z",
     "proofPurpose": "assertionMethod",
-    "proofValue": "uHYrCh17LAjjyzCnADxWNTq4WASH4JjWI/eHBzvkyAbgcmsRqplyEEiBGG37bm3fGkwXKINBbdVhqtr0Fu+ez713HDmrH2dLYI1sWScXYc9v97fhPTh9VFP9F2C5kEoKfjpVzTIVZLBrIXKXQzLZgA==",
+    "proofValue": "kyesJtjITx/qsXTOuBpAu44e1UC9kjwqbEVyPqTiHL0pVPyaD/xeD0pEw/qBtr25SfrmMj3wXhCMfH77cc6+JgpgIaAnmR5wtTKGsxNm03wwlXf8LFZujjbw+Uf9Wm3aNO7rmAdrG3ec8e9VEQZeIw==",
     "verificationMethod": "did:key:zUC724vuGvHpnCGFG1qqpXb81SiBLu3KLSqVzenwEZNPoY35i2Bscb8DLaVwHvRFs6F2NkNNXRcPWvqnPDUd9ukdjLkjZd3u9zzL4wDZDUpkPAatLDGLEYVo8kkAzuAKJQMr7N2#zUC724vuGvHpnCGFG1qqpXb81SiBLu3KLSqVzenwEZNPoY35i2Bscb8DLaVwHvRFs6F2NkNNXRcPWvqnPDUd9ukdjLkjZd3u9zzL4wDZDUpkPAatLDGLEYVo8kkAzuAKJQMr7N2"
   }
 }

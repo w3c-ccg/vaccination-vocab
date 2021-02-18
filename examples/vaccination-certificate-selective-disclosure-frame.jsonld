@@ -10,8 +10,8 @@
   ],
   "credentialSubject": {
     "@explicit": true,
-    "givenName": {},
-    "familyName": {},
-    "birthDate": {}
+    "@type": "VaccinationEvent",
+    "batchNumber": {},
+    "countryOfVaccination": {}
   }
 }
