@@ -272,34 +272,34 @@ or send them to
           "expirationDate": "2029-12-03T12:19:52Z",
           "issuer": "did:key:z6MkiY62766b1LJkExWMsM3QG4WtX7QpY823dxoYzr9qZvJ3",
           "credentialSubject": {
-            "type": "VaccineRecipient",
-            "givenName": "JOHN",
-            "familyName": "SMITH",
-            "gender": "Male",
-            "birthDate": "1958-07-17",
+            "type": "VaccinationEvent",
+            "batchNumber": "1183738569",
+            "administeringCentre": "MoH",
+            "countryOfVaccination": "NZ",
+            "recipient": {
+              "type": "VaccineRecipient",
+              "givenName": "JOHN",
+              "familyName": "SMITH",
+              "gender": "Male",
+              "birthDate": "1958-07-17"
+            },
             "vaccine": {
               "type": "Vaccine",
-              "atcCode": "J07BX03",
-              "event": {
-                "type": "VaccinationEvent",
-                "batchNumber": "1183738569",
-                "administeringCentre": "MoH",
-                "countryOfVaccination": "NZ"
-              }
+              "atcCode": "J07BX03"
             }
           },
           "proof": {
             "type": "Ed25519Signature2018",
-            "created": "2021-02-15T02:49:55Z",
-            "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..R-b0tBoZOu8ppoB2inoiaD4YG1lIVE8txWhaViqXoO2ThzIA3Z2_E2fZLPie9BF8iG0b_MchHcWrN0cJdCdaBQ",
+            "created": "2021-02-18T23:49:52Z",
+            "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..a3UqIuKSOmCKrdn2knl_hCjiN4f4Ud1eO5ckwEHb623V9vdCwWCDB7GBHlRBYSI8ek2E-By7xysVFwutcpOeDg",
             "proofPurpose": "assertionMethod",
             "verificationMethod": "did:key:z6MkiY62766b1LJkExWMsM3QG4WtX7QpY823dxoYzr9qZvJ3#z6MkiY62766b1LJkExWMsM3QG4WtX7QpY823dxoYzr9qZvJ3"
           }
-        }        
+        }      
       </pre>
 
       <pre class="example" title="CBOR Diagnostic output for the above W3C Verifiable Credential expressed in CBOR-LD">
-        d9                --  next 2 bytes
+      d9                --  next 2 bytes
         0501            -- Tag #1281
           a8            -- Map, 8 pairs
             01          -- {Key:0}, 1
@@ -309,7 +309,7 @@ or send them to
                 1f      -- String, length: 31
                   68747470733a2f2f773369642e6f72672f76616363696e6174696f6e2f7631 -- [1], "https://w3id.org/vaccination/v1"
             18          -- Positive number, next 1 byte
-              3d        -- {Key:1}, 61
+              3e        -- {Key:1}, 62
             82          -- {Val:1}, Array, 2 items
               0f        -- [0], 15
               0b        -- [1], 11
@@ -338,68 +338,68 @@ or send them to
               1d        -- {Key:6}, 29
             a6          -- {Val:6}, Map, 6 pairs
               18        -- Positive number, next 1 byte
-                3d      -- {Key:0}, 61
-              0e        -- {Val:0}, 14
-              18        -- Positive number, next 1 byte
-                28      -- {Key:1}, 40
-              64        -- String, length: 4
-                4a4f484e -- {Val:1}, "JOHN"
-              18        -- Positive number, next 1 byte
-                26      -- {Key:2}, 38
-              65        -- String, length: 5
-                534d495448 -- {Val:2}, "SMITH"
-              18        -- Positive number, next 1 byte
-                27      -- {Key:3}, 39
-              64        -- String, length: 4
-                4d616c65 -- {Val:3}, "Male"
-              16        -- {Key:4}, 22
+                3e      -- {Key:0}, 62
+              0c        -- {Val:0}, 12
+              15        -- {Key:1}, 21
               6a        -- String, length: 10
-                313935382d30372d3137 -- {Val:4}, "1958-07-17"
+                31313833373338353639 -- {Val:1}, "1183738569"
+              11        -- {Key:2}, 17
+              63        -- String, length: 3
+                4d6f48  -- {Val:2}, "MoH"
               18        -- Positive number, next 1 byte
-                3e      -- {Key:5}, 62
-              a3        -- {Val:5}, Map, 3 pairs
+                18      -- {Key:3}, 24
+              62        -- String, length: 2
+                4e5a    -- {Val:3}, "NZ"
+              18        -- Positive number, next 1 byte
+                3a      -- {Key:4}, 58
+              a5        -- {Val:4}, Map, 5 pairs
                 18      -- Positive number, next 1 byte
-                  3d    -- {Key:0}, 61
+                  3e    -- {Key:0}, 62
+                0e      -- {Val:0}, 14
+                18      -- Positive number, next 1 byte
+                  28    -- {Key:1}, 40
+                64      -- String, length: 4
+                  4a4f484e -- {Val:1}, "JOHN"
+                18      -- Positive number, next 1 byte
+                  26    -- {Key:2}, 38
+                65      -- String, length: 5
+                  534d495448 -- {Val:2}, "SMITH"
+                18      -- Positive number, next 1 byte
+                  27    -- {Key:3}, 39
+                64      -- String, length: 4
+                  4d616c65 -- {Val:3}, "Male"
+                16      -- {Key:4}, 22
+                6a      -- String, length: 10
+                  313935382d30372d3137 -- {Val:4}, "1958-07-17"
+              18        -- Positive number, next 1 byte
+                3f      -- {Key:5}, 63
+              a2        -- {Val:5}, Map, 2 pairs
+                18      -- Positive number, next 1 byte
+                  3e    -- {Key:0}, 62
                 0d      -- {Val:0}, 13
                 13      -- {Key:1}, 19
                 67      -- String, length: 7
                   4a303742583033 -- {Val:1}, "J07BX03"
-                18      -- Positive number, next 1 byte
-                  22    -- {Key:2}, 34
-                a4      -- {Val:2}, Map, 4 pairs
-                  18    -- Positive number, next 1 byte
-                    3d  -- {Key:0}, 61
-                  0c    -- {Val:0}, 12
-                  15    -- {Key:1}, 21
-                  6a    -- String, length: 10
-                    31313833373338353639 -- {Val:1}, "1183738569"
-                  11    -- {Key:2}, 17
-                  63    -- String, length: 3
-                    4d6f48 -- {Val:2}, "MoH"
-                  18    -- Positive number, next 1 byte
-                    18  -- {Key:3}, 24
-                  62    -- String, length: 2
-                    4e5a -- {Val:3}, "NZ"
             18          -- Positive number, next 1 byte
               37        -- {Key:7}, 55
             a5          -- {Val:7}, Map, 5 pairs
               18        -- Positive number, next 1 byte
-                3d      -- {Key:0}, 61
+                3e      -- {Key:0}, 62
               07        -- {Val:0}, 7
               18        -- Positive number, next 1 byte
                 19      -- {Key:1}, 25
               1a        -- Positive number, next 4 bytes
-                6029e153 -- {Val:1}, 1613357395
+                602efd20 -- {Val:1}, 1613692192
               18        -- Positive number, next 1 byte
                 30      -- {Key:2}, 48
               78        -- String, length next 1 byte
                 90      -- String, length: 144
-                  65794a68624763694f694a465a45525451534973496d49324e4349365a6d467363325573496d4e79615851694f6c7369596a5930496c31392e2e522d623074426f5a4f753870706f4232696e6f696144345947316c495645387478576861566971586f4f3254687a4941335a325f4532665a4c50696539424638694730625f4d6368486357724e30634a644364614251 -- {Val:2}, "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..R-b0tBoZOu8ppoB2inoiaD4YG1lIVE8txWhaViqXoO2ThzIA3Z2_E2fZLPie9BF8iG0b_MchHcWrN0cJdCdaBQ"
+                  65794a68624763694f694a465a45525451534973496d49324e4349365a6d467363325573496d4e79615851694f6c7369596a5930496c31392e2e6133557149754b534f6d434b72646e326b6e6c5f68436a694e346634556431654f35636b7745486236323356397664437757434442374742486c524259534938656b32452d427937787973564677757463704f654467 -- {Val:2}, "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..a3UqIuKSOmCKrdn2knl_hCjiN4f4Ud1eO5ckwEHb623V9vdCwWCDB7GBHlRBYSI8ek2E-By7xysVFwutcpOeDg"
               18        -- Positive number, next 1 byte
                 38      -- {Key:3}, 56
               12        -- {Val:3}, 18
               18        -- Positive number, next 1 byte
-                42      -- {Key:4}, 66
+                43      -- {Key:4}, 67
               83        -- {Val:4}, Array, 3 items
                 19      -- Positive number, next 2 bytes
                   0401  -- [0], 1025
@@ -409,8 +409,8 @@ or send them to
                 58      -- Bytes, length next 1 byte
                   22    -- Bytes, length: 34
                     ed013cab50d559e78a1bab71841fd9cbd9e802999038685ef84b7e490d2717c2b110 -- [2], ed013cab50d559e78a1bab71841fd9cbd9e802999038685ef84b7e490d2717c2b110
-      0xd90501a8018211781f68747470733a2f2f773369642e6f72672f76616363696e6174696f6e2f7631183d820f0b182b781f75726e3a757663693a61663576736864653834336a663833316a313238666a182d1a5de652e818241a70b64a68182f821904015822ed013cab50d559e78a1bab71841fd9cbd9e802999038685ef84b7e490d2717c2b110181da6183d0e1828644a4f484e182665534d4954481827644d616c65166a313935382d30372d3137183ea3183d0d13674a3037425830331822a4183d0c156a3131383337333835363911634d6f481818624e5a1837a5183d0718191a6029e1531830789065794a68624763694f694a465a45525451534973496d49324e4349365a6d467363325573496d4e79615851694f6c7369596a5930496c31392e2e522d623074426f5a4f753870706f4232696e6f696144345947316c495645387478576861566971586f4f3254687a4941335a325f4532665a4c50696539424638694730625f4d6368486357724e30634a6443646142511838121842831904015822ed013cab50d559e78a1bab71841fd9cbd9e802999038685ef84b7e490d2717c2b1105822ed013cab50d559e78a1bab71841fd9cbd9e802999038685ef84b7e490d2717c2b110
-      </pre>
+      0xd90501a8018211781f68747470733a2f2f773369642e6f72672f76616363696e6174696f6e2f7631183e820f0b182b781f75726e3a757663693a61663576736864653834336a663833316a313238666a182d1a5de652e818241a70b64a68182f821904015822ed013cab50d559e78a1bab71841fd9cbd9e802999038685ef84b7e490d2717c2b110181da6183e0c156a3131383337333835363911634d6f481818624e5a183aa5183e0e1828644a4f484e182665534d4954481827644d616c65166a313935382d30372d3137183fa2183e0d13674a3037425830331837a5183e0718191a602efd201830789065794a68624763694f694a465a45525451534973496d49324e4349365a6d467363325573496d4e79615851694f6c7369596a5930496c31392e2e6133557149754b534f6d434b72646e326b6e6c5f68436a694e346634556431654f35636b7745486236323356397664437757434442374742486c524259534938656b32452d427937787973564677757463704f6544671838121843831904015822ed013cab50d559e78a1bab71841fd9cbd9e802999038685ef84b7e490d2717c2b1105822ed013cab50d559e78a1bab71841fd9cbd9e802999038685ef84b7e490d2717c2b110
+  </pre>
 
       <p>
         Below illustrates the size difference of the Verifiable Credential example shown above encoded in JSON-LD and CBOR-LD.
@@ -426,7 +426,7 @@ or send them to
         <tbody>
           <tr>
             <td>JSON-LD</td>
-            <td>1220</td>
+            <td>1217</td>
           </tr>
           <tr>
             <td>CBOR-LD</td>
