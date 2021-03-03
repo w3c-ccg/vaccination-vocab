@@ -8,3 +8,7 @@ Verifiable Credentials related to vaccination certificates
 # Related Projects
 
 The terms and definitions used in this vocab were in part inspired by the recent publication from the EU on the [eHealth Networks guidelines on proof of vaccination for medical purposes](https://ec.europa.eu/health/sites/health/files/ehealth/docs/vaccination-proof_interoperability-guidelines_en.pdf).
+
+# Samples
+
+To regenerate the sample W3C Verifiable Credentials that are using the defined vocabulary run `npm i && npm run generateExamples`
