@@ -1,0 +1,24 @@
+{
+  "name": "vaccination-vocab-context",
+  "version": "0.1.0",
+  "description": "Vaccination Vocabulary Context Tester",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w3c-ccg/vaccination-vocab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/w3c-ccg/vaccination-vocab/issues"
+  },
+  "homepage": "https://github.com/w3c-ccg/vaccination-vocab#readme",
+  "scripts": {
+    "generateExamples": "node src/generateExamples.js"
+  },
+  "dependencies": {
+    "@mattrglobal/jsonld-signatures-bbs": "0.8.0",
+    "@transmute/did-key-bls12381": "0.2.1-unstable.35",
+    "@transmute/did-key-ed25519": "0.2.1-unstable.35",
+    "@transmute/did-key.js": "0.2.1-unstable.35",
+    "require-all": "3.0.0",
+    "vc-js": "0.6.4"
+  }
+}
