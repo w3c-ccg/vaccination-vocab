@@ -1,0 +1,147 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "@protected": true,
+
+        "id": "@id",
+        "type": "@type",
+
+        "description": "http://schema.org/description",
+        "identifier": "http://schema.org/identifier",
+        
+        
+
+        "VaccinationCertificate": {
+            "@id": "https://w3id.org/vaccination#VaccinationCertificate",
+            "bundle-hashlink" : {
+                "@type": "http://www.w3.org/2001/XMLSchema#string"
+            },
+            "@context": {
+                "@version": 1.1,
+                "@protected": true,
+
+                "id": "@id",
+                "type": "@type",
+
+                "description": "http://schema.org/description",
+                "identifier": "http://schema.org/identifier",
+                "name": "http://schema.org/name"
+            }
+        },
+
+        "VaccinationEvent": {
+            "@id": "https://w3id.org/vaccination#VaccinationEvent",
+            
+
+            "@context": {
+                "@version": 1.1,
+                "@protected": true,
+
+                "id": "@id",
+                "type": "@type",
+
+                "administeringCentre": {
+                    "@id": "http://hl7.org/fhir/Location.name",
+                    "@type": "http://www.w3.org/2001/XMLSchema#string"
+                },
+                "batchNumber": {
+                    "@id": "http://hl7.org/fhir/Immunization.lotNumber",
+                    "@type": "http://www.w3.org/2001/XMLSchema#string"
+                },
+                "countryOfVaccination": {
+                    "@id": "http://hl7.org/fhir/ValueSet/iso3166-1-2",
+                    "@type":"http://www.w3.org/2001/XMLSchema#string"
+                },
+                "dateOfVaccination": {
+                    "@id": "http://hl7.org/fhir/Immunization.occurenceDateTime",
+                    "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                },
+                "healthProfessional": {
+                    "@id": "http://hl7.org/fhir/ValueSet/immunization-function",
+                    "@type": "http://www.w3.org/2001/XMLSchema#string"
+                },
+                "nextVaccinationDate": {
+                    "@id": "http://hl7.org/fhir/ImmunizationRecommendation.dateCriterion.value",
+                    "@type": "xsd:dateTime"
+                },
+                "order": {
+                    "@id": "http://hl7.org/fhir/Immunization.protocolApplied.doseNumber",
+                    "@type": "http://www.w3.org/2001/XMLSchema#string"
+                },
+                "recipient": {
+                    "@id": "http://hl7.org/fhir/Patient.identifier",
+                    "@type": "http://www.w3.org/2001/XMLSchema#string"
+                },
+                "vaccine": {
+                    "@id": "http://w3id.org/vaccination#covid19-eua-cvx-code",
+                    "@type": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            }
+        },
+
+        "VaccineRecipient": {
+            "@id": "https://w3id.org/vaccination#VaccineRecipient",
+            
+
+            "@context": {
+                "@version": 1.1,
+                "@protected": true,
+
+                "id": "@id",
+                "type": "@type",
+
+                "birthDate": {
+                    "@id": "http://hl7.org/fhir/Patient.birthDate",
+                    "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                },
+                "familyName": { 
+                    "@context": "fhir/default.context.jsonld",
+                    "@id": "http://hl7.org/fhir/Patient.name.familyName",
+                    "@type": "http://www.w3.org/2001/XMLSchema#string"
+                },
+                "gender": { 
+                    "@id": "http://hl7.org/fhir/gender-identity",
+                    "@type": "http://www.w3.org/2001/XMLSchema#string"
+                },
+                "givenName": { 
+                    "@id": "http://hl7.org/fhir/Patient.name.givenName",
+                    "@type": "http://www.w3.org/2001/XMLSchema#string"
+                }
+            }
+        },
+
+        "Vaccine": {
+            "@id": "https://w3id.org/vaccination#Vaccine",
+            
+
+            "@context": {
+                "@version": 1.1,
+                "@protected": true,
+
+                "id": "@id",
+                "type": "@type",
+
+                "atcCode": {
+                    "@id": "http://w3id.org/vaccination#covid19-eua-cvx-code",
+                    "@type": "http://www.w3.org/2001/XMLSchema#integer"
+                },
+                "disease": {
+                    "@type": "http://www.w3.org/2001/XMLSchema#string",
+                    "@id": "http://hl7.org/fhir/Immunization.protocolApplied.targetedDisease"
+                },
+                "event": {
+                    "@id": "https://w3id.org/vaccination#VaccineRecipientVaccineEvent",
+                    "@type": "https://w3id.org/vaccination#VaccineEvent"
+                },
+                "marketingAuthorizationHolder": {
+                    "@id": "https://w3id.org/vaccination#marketingAuthorizationHolder",
+                    "@type": "@id"
+                },
+                "medicinalProductName": {
+                    "@id": "https://w3id.org/vaccination#medicinalProductName",
+                    "@type": "http://www.w3.org/2001/XMLSchema#string"
+                } 
+            }
+        }
+    }
+}
