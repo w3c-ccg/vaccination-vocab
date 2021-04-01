@@ -13,9 +13,7 @@
 
         "VaccinationCertificate": {
             "@id": "https://w3id.org/vaccination#VaccinationCertificate",
-            "bundle-hashlink" : {
-                "@type": "http://www.w3.org/2001/XMLSchema#string"
-            },
+ 
             "@context": {
                 "@version": 1.1,
                 "@protected": true,
