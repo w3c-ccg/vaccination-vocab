@@ -1,0 +1,36 @@
+{
+    "@context": [
+      "https://www.w3.org/2018/credentials/v1",
+      "https://w3c-ccg.github.io/vaccination-vocab/context/v1/CA/unstable.json",
+      "https://w3id.org/security/bbs/v1"
+    ],
+    "type": [
+      "VerifiableCredential",
+      "VaccinationCertificate"
+    ],
+    "id": "urn:uvci:af5vshde843jf831j128fj",
+    "name": "COVID-19 Vaccination Certificate",
+    "description": "COVID-19 Vaccination Certificate",
+    "issuanceDate": "2019-12-03T12:19:52Z",
+    "expirationDate": "2029-12-03T12:19:52Z",
+    "credentialSubject": {
+      "type": "VaccinationEvent",
+      "batchNumber": "UI256AA",
+      "administeringCentre": "0000004570208",
+      "healthProfessional": "LPN",
+      "countryOfVaccination": "CA",
+      "recipient": {
+        "type": "VaccineRecipient",
+        "givenName": "JOHN",
+        "familyName": "SMITH",
+        "gender": "Male",
+        "birthDate": "1958-07-17"
+      },
+      "vaccine": {
+        "type": "Vaccine",
+        "disease": "COVID-19",
+        "atcCode": "28571000087109",
+        "medicinalProductName": "MODERNA COVID-19 mRNA-1273 (COVID-19)",
+        "marketingAuthorizationHolder": "Moderna Biotech"
+      }
+    }

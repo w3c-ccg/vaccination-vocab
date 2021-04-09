@@ -32,11 +32,11 @@
                 "id": "@id",
                 "type": "@type",
                 "administeringCentre": {
-                    "@id": "http://hl7.org/fhir/uv/ips/Immunization.location.name",
+                    "@id": "http://hl7.org/fhir/Immunization.location.name",
                     "@type": "http://www.w3.org/2001/XMLSchema#string"
                 },
                 "batchNumber": {
-                    "@id": "http://hl7.org/fhir/uv/ips/Immunization.lotNumber",
+                    "@id": "http://hl7.org/fhir/Immunization.lotNumber",
                     "@type": "http://www.w3.org/2001/XMLSchema#string"
                 },
                 "countryOfVaccination": {
@@ -44,7 +44,7 @@
                     "@type":"http://www.w3.org/2001/XMLSchema#string"
                 },
                 "dateOfVaccination": {
-                    "@id": "http://hl7.org/fhir/uv/ips/Immunization.occurenceDateTime",
+                    "@id": "http://hl7.org/fhir/Immunization.occurenceDateTime",
                     "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
                 },
                 "healthProfessional": {
@@ -64,7 +64,7 @@
                     "@type": "https://w3id.org/vaccination#VaccineRecipient"
                 },
                 "vaccine": {
-                    "@id": "http://id.who.int/icd/entity/164949870",
+                    "@id": "http://w3id.org/vaccination#covid19-eu-ehealth-vaccine-code",
                     "@type": "http://www.w3.org/2001/XMLSchema#string"
                 }
             }
@@ -82,11 +82,11 @@
                 "type": "@type",
 
                 "birthDate": {
-                    "@id": "http://hl7.org/fhir/uv/ips/Patient.birthDate",
+                    "@id": "http://hl7.org/fhir/Patient.birthDate",
                     "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
                 },
                 "familyName": { 
-                    "@id": "http://hl7.org/fhir/uv/ips/Patient.name.use",
+                    "@id": "http://hl7.org/fhir/Patient.name.familyName",
                     "@type": "http://www.w3.org/2001/XMLSchema#string"
                 },
                 "gender": { 
@@ -94,7 +94,7 @@
                     "@type": "http://www.w3.org/2001/XMLSchema#string"
                 },
                 "givenName": { 
-                    "@id": "http://hl7.org/fhir/uv/ips/Patient.name.givenName",
+                    "@id": "http://hl7.org/fhir/Patient.name.givenName",
                     "@type": "http://www.w3.org/2001/XMLSchema#string"
                 }
             }
@@ -112,8 +112,8 @@
                 "type": "@type",
 
                 "atcCode": {
-                    "@id": "http://id.who.int/icd/entity/164949870",
-                    "@type": "http://www.w3.org/2001/XMLSchema#string"
+                    "@id": "http://w3id.org/vaccination#covid19-eu-ehealth-vaccine-code",
+                    "@type": "http://www.w3.org/2001/XMLSchema#integer"
                 },
                 "disease": {
                     "@type": "http://www.w3.org/2001/XMLSchema#string",
