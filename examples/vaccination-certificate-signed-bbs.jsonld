@@ -11,7 +11,7 @@
   "id": "urn:uvci:af5vshde843jf831j128fj",
   "name": "COVID-19 Vaccination Certificate",
   "description": "COVID-19 Vaccination Certificate",
-  "issuanceDate": "2021-03-03T04:07:09.825Z",
+  "issuanceDate": "2021-04-08T23:41:41.255Z",
   "expirationDate": "2029-12-03T12:19:52Z",
   "credentialSubject": {
     "type": "VaccinationEvent",
@@ -34,12 +34,12 @@
       "marketingAuthorizationHolder": "Moderna Biotech"
     }
   },
-  "issuer": "did:key:zUC7DaQ48NzLiecv2dcP9fkom5Tx9EZ3TpJDZsWJqSFPDQt8yRzjoiEzUoJc5cnfEFNPaTMXTVWBiGhUfdXT8WgEM9tyr1oSz8pnQB41khnXqAhtaEd9tHVwaWfALBQpvVYXiqx",
+  "issuer": "did:key:zUC779cua5Gyh35PAHxB7YXTN4tyc1qUZF6WWS2vFbPB6cRHKHYkiMq762wEMwRZ5n7BUmnpY9kgttW8q8DZL1x2nWpt4EJ7oPbn3LdBA5pUdHLFFDPqFDrNqNZdvrdBbF3sK4W",
   "proof": {
     "type": "BbsBlsSignature2020",
-    "created": "2021-03-03T04:07:09Z",
+    "created": "2021-04-08T23:41:41Z",
     "proofPurpose": "assertionMethod",
-    "proofValue": "h1JPz9yGn/MQPtlZSatInmEl7gnC+6hrezLXqrg/k6XdKe1ahtIGk0mc0RmBwTCJRGCo88k6ECREPnlmMwPQpMfz6adwgSxa8Xt6ZFYsYnoFY5LgYSH34wREUSwUHcf6D3hMueOfUl5ZyOusBUveLw==",
-    "verificationMethod": "did:key:zUC7DaQ48NzLiecv2dcP9fkom5Tx9EZ3TpJDZsWJqSFPDQt8yRzjoiEzUoJc5cnfEFNPaTMXTVWBiGhUfdXT8WgEM9tyr1oSz8pnQB41khnXqAhtaEd9tHVwaWfALBQpvVYXiqx#zUC7DaQ48NzLiecv2dcP9fkom5Tx9EZ3TpJDZsWJqSFPDQt8yRzjoiEzUoJc5cnfEFNPaTMXTVWBiGhUfdXT8WgEM9tyr1oSz8pnQB41khnXqAhtaEd9tHVwaWfALBQpvVYXiqx"
+    "proofValue": "oVKuppedDMOFO9RvPBe2EuvMSRWGl3apDKi4GEhdNJup+Iaza0SKYwuYxNGd9IGGEH7VFvu4v1/iu5uPYPipJ5B10xFTHQ/YrIBUMAHuc8Mbu+8SEhxMnI+fpwASqwdMX1A+3+bBzoOIiUm9DGs8tQ==",
+    "verificationMethod": "did:key:zUC779cua5Gyh35PAHxB7YXTN4tyc1qUZF6WWS2vFbPB6cRHKHYkiMq762wEMwRZ5n7BUmnpY9kgttW8q8DZL1x2nWpt4EJ7oPbn3LdBA5pUdHLFFDPqFDrNqNZdvrdBbF3sK4W#zUC779cua5Gyh35PAHxB7YXTN4tyc1qUZF6WWS2vFbPB6cRHKHYkiMq762wEMwRZ5n7BUmnpY9kgttW8q8DZL1x2nWpt4EJ7oPbn3LdBA5pUdHLFFDPqFDrNqNZdvrdBbF3sK4W"
   }
 }
